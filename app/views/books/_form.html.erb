@@ -1,15 +1,20 @@
 <%= form_for(book) do |f| %>
   <div class="field row">
     <%= f.label :title %>
-    <%= f.text_field :title, class: 'col-xs-12 book_title' %>
+    <%= f.text_field :title, class: 'form-control col-xs-12 book_title' %>
   </div>
 
   <div class="field row">
     <%= f.label :opinion %>
-    <%= f.text_area :body, class: 'col-xs-12 book_body'%>
+    <%= f.text_area :body, class: 'form-control col-xs-12 book_body'%>
+  </div>
+  
+  <div class="field row">
+    <%= f.label :tag_list %>
+    <%= f.text_field :tag_list, value: book.tag_list.join(','), class: "form-control col-xs-12 book_tags" %>
   </div>
 
   <div class="actions row">
-    <%= f.submit class: 'btn btn-primary col-xs-12'%>
+    <%= f.submit class: 'form-control btn btn-primary col-xs-12'%>
   </div>
 <% end %>
