@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
 	before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :set_book_q
   protect_from_forgery with: :exception
   
   private
@@ -25,4 +26,9 @@ class ApplicationController < ActionController::Base
         user.id.equal?(current_user.id)
       end
     end 
+
+    def set_book_q
+      @book_q = Book.ransack(params[:q])
+    end
+    
 end

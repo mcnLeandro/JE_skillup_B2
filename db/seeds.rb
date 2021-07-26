@@ -20,4 +20,4 @@ User.create!(
 		password: "#{i}#{i}#{i}#{i}#{i}#{i}",
 		introduction: "週に#{i}冊は本読んでます！よろしくお願いします！"
 	 )
-end
+end 

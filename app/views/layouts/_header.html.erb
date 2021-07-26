@@ -20,3 +20,14 @@
     </nav>
   </div>
 </header>
+  <% if user_signed_in? %>
+    <div class="search-form" style="margin-top: 70px; text-align: center;">
+      <%= search_form_for( @book_q, url: search_path) do |f| %>
+
+        <%= f.label "Book Search", :title_or_body_or_user_id %>
+        <%= f.search_field :title_or_body_or_user_id %>
+
+        <%= f.submit %>
+      <% end %>
+    </div>
+  <% end %>
