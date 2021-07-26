@@ -15,3 +15,11 @@
 //= require turbolinks
 //= require_tree .
 //= require bootstrap-sprockets
+$(function() {
+    $('.single-item').slick({
+          infinite: true,
+          dots:true,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+     });
+});
