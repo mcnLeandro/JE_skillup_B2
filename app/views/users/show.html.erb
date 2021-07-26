@@ -6,7 +6,10 @@
 
     <h2>New book</h2>
     <%= render 'books/form', book: @book %>
-
+    <% if current_user.id == @user.id %>
+      <h2>Google Map</h2>
+      <%= render 'users/map', user: @user %>
+    <% end %>
   </div>
 
   <div class='col-xs-9'>
